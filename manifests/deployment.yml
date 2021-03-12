@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: albaferriazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: albaferriazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: albaferriazurevotingappredis 
+    spec:
+      containers:
+        - name: albaferriazurevotingappredis 
+          image: msigniteacr.azurecr.io/albaferriazurevotingappredis
+          ports:
+          - containerPort: 80
